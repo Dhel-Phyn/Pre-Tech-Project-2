@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="./mobile.css">
+    
+    <title>Menu</title>
+  </head>
+  <body>
+    <div class="container">
+    <h1>Our Menu</h1>
+    <p id="menuItems"></p>
+    <div class="top">
+    <select name="menuField" id="menuField" class="menuField">
+      <option value="Salad">Salad</option>
+      <option value="Jollof">Jollof</option>
+      <option value="Pizza">Pizza</option>
+      <option value="YamPorriage">YamPorriage</option>
+    </select>
+    <!-- <input type="text" id=" menuField" class="menuField" /> -->
+    <input type="submit" value="Submit" class="menuSubmit" />
+  </div >
+  <div class="down">
+    <p id="userSelection"></p>
+    <p id="ingredient"></p>
+  </div>
+</div>
+    <script>
+      let item1 = "Salad";
+      let item2 = " Jollof";
+      let item3 = " Pizza";
+      let item4 = "YamPorriage";
+      let ing1 =
+        "lecttus, onion, sardine, meat, salt, vinigar, tomatoes ,cream , spag";
+      let ing2 = "rice , oil, pepper, tomatoes paste, spices, veggies";
+      let ing3 = "flour, sauces, cheese, meat";
+      let ing4 = "Yam, red oil, pepper, fresh tomatoes, maggie, onion";
+      document.getElementById("menuItems").innerHTML =
+        "Here is the list of our food : " +
+        "1. " +
+        item1 +
+        " 2. " +
+        item2 +
+        " 3. " +
+        item3 +
+        " 4. " +
+        item4 +
+        " ";
+
+      const menuSubmit = document.querySelector(" .menuSubmit");
+      const menuField= document.querySelector(" .menuField");
+
+      function checkMenu() {
+        const menuValue =(menuField.value);
+        if (menuValue == "Salad") {
+          document.getElementById("userSelection").innerHTML =
+            "You have selected " + item1;
+          document.getElementById("ingredient").innerHTML =
+            "The ingredients are: " + ing1;
+        } else if (menuValue == "Jollof") {
+          document.getElementById("userSelection").innerHTML =
+            "You have selected " + item2;
+          document.getElementById("ingredient").innerHTML =
+            "The ingredients are: " + ing2;
+        } else if (menuValue == "Pizza"){
+          document.getElementById("userSelection").innerHTML =
+            "You have selected " + item3;
+          document.getElementById("ingredient").innerHTML =
+            "The ingredients are: " + ing3;
+        } else if (menuValue == "YamPorriage") {
+          document.getElementById("userSelection").innerHTML =
+            "You have selected " + item4;
+          document.getElementById("ingredient").innerHTML =
+            "The ingredients are: " + ing4;
+        } else {
+          document.getElementById("userSelection").innerHTML =
+            "Please select the right choice";
+        }
+      }
+
+      menuSubmit.addEventListener("click", checkMenu);
+    </script>
+  </body>
+</html>

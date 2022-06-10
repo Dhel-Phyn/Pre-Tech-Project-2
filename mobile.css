@@ -1,0 +1,6 @@
+@media (max-width:500px){
+  .top{
+  flex-direction: column;
+  align-items: center;
+}
+}
